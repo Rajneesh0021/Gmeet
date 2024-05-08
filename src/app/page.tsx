@@ -20,8 +20,10 @@ export default function Home() {
   const handleFormSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     
-    
-    const meetingLinks = JSON.parse(localStorage.getItem('selectedTime'));
+    if (typeof window !== "undefined") {
+    var  meetingLinks= JSON.parse(localStorage.getItem('selectedTime'));
+    }
+   
 
     const linkIndex = meetingLinks.indexOf(meetingLink);
     if (linkIndex !== -1) {
